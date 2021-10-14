@@ -1,6 +1,20 @@
 function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
 
-%computes social network user follow list Hadamard transform in Pauli-X space
+% social network user follow-back statistics
+
+% use a scraper such as https://phantombuster.com/
+
+% input two follow lists (or following/followers for same user) to find common users between follow lists
+
+% input web-diameter variable to obtain a coarse measure of user relationship to the web
+
+% diameter = 0.35 + 2.06 * log(N)
+
+% where N = # of webpages
+
+% https://barabasi.com/f/65.pdf
+
+% https://www.worldwidewebsize.com
 
 if nargin ~= 4
 
@@ -117,8 +131,6 @@ a = sum(z);
 p = (a/w);
 l = (a/x);
 r = p/l;
-
-%d = a/50; % d = 50 (Barabasi 1999)
 
 disp(a);
 disp(p);
