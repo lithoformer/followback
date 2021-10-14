@@ -1,6 +1,6 @@
-function [m,n,z,q] = pauliz_hadamard_2_social(user1,user2,type,diameter)
+function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
 
-%computes social network user follow list Hadamard transform in Pauli-Z space
+%computes social network user follow list Hadamard transform in Pauli-X space
 
 if nargin ~= 4
 
