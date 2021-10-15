@@ -6,7 +6,7 @@ function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
 
 % input two follow lists (or following/followers for same user) to find common users between follow lists
 
-% input web-diameter variable to obtain a coarse measure of user relationship to the web
+% input web-diameter variable to obtain a coarse measure of user relationship to web
 
 % diameter = 0.35 + 2.06 * log(N)
 
@@ -137,6 +137,6 @@ sprintf('%f common users',a)
 sprintf('ratio common users to userlist1 = %f',p)
 sprintf('ratio common users to userlist2 = %f',l)
 sprintf('ratio of two ratios = %f',r)
-sprintf('common users / diameter = %f',q)
+sprintf('# of common users / diameter = %f',q)
 
 end
