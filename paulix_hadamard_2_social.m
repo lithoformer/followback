@@ -16,6 +16,10 @@ function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % https://www.worldwidewebsize.com
 
+% sample input:
+
+% [m,n,z,q] = pauliz_hadamard_2_social('scott_fr.csv','scott_fg.csv',0,50);
+
 if nargin ~= 4
 
 	error('Please enter two user files, transform ordering type - 0 hadamard, 1 dyadic, default sequency, and web-diameter');
