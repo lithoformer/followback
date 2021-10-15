@@ -131,11 +131,12 @@ a = sum(z);
 p = (a/w);
 l = (a/x);
 r = p/l;
+q = a/d;
 
-disp(a);
-disp(p);
-disp(l);
-disp(r);
-disp(a/d);
+sprintf('%f common follows',a)
+sprintf('ratio common follows to userlist1 = %f',p)
+sprintf('ratio common follows to userlist2 = %f',l)
+sprintf('ratio of two ratios = %f',r)
+sprintf('common follows / diameter = %f',q)
 
 end
