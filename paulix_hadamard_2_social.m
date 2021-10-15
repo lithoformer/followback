@@ -133,10 +133,10 @@ l = (a/x);
 r = p/l;
 q = a/d;
 
-sprintf('%f common follows',a)
-sprintf('ratio common follows to userlist1 = %f',p)
-sprintf('ratio common follows to userlist2 = %f',l)
+sprintf('%f common users',a)
+sprintf('ratio common users to userlist1 = %f',p)
+sprintf('ratio common users to userlist2 = %f',l)
 sprintf('ratio of two ratios = %f',r)
-sprintf('common follows / diameter = %f',q)
+sprintf('common users / diameter = %f',q)
 
 end
