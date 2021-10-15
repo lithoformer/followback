@@ -18,7 +18,7 @@ function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % sample input:
 
-% [m,n,z,q] = paulix_hadamard_2_social('scott_following.csv','scott_followers.csv',0,50);
+% [m,n,z,q] = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,19);
 
 if nargin ~= 4
 
@@ -30,8 +30,8 @@ end
 p_two = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432,67108864,134217728,268435456,536870912,1073741824,2147483648];
 
 %read files
-M = readcell(user1);
-N = readcell(user2);
+M = readcell(userlist1);
+N = readcell(userlist2);
 
 %generate hadamard vectors
 w = length(M);
