@@ -26,19 +26,18 @@ if nargin ~= 4
 
 end
 
-%power of twos table
+% power of twos table
 p_two = [1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432,67108864,134217728,268435456,536870912,1073741824,2147483648];
 
-%read files
+% read files
 M = readcell(userlist1);
 N = readcell(userlist2);
 
-%generate hadamard vectors
+% generate hadamard vectors
 w = length(M);
-
 x = length(N);
 
-%user list sizes
+% user list sizes
 if w >= x
 
 	q = w;
@@ -49,9 +48,10 @@ else
     
 end
 
+% set diameter of web
 d = diameter;
 
-%find transform size
+% find transform size
 for h = 1:length(p_two)
 
 	if q < p_two(h)
@@ -64,17 +64,17 @@ for h = 1:length(p_two)
 
 end
 
-%init matrix
+% init matrix
 m = zeros(q0);
 n = zeros(q0);
 
-%copy vectors
+% copy vectors
 M1 = cell(q0,1);
 N1 = cell(q0,1);
 M1(1:w,1) = M(1:w,2);
 N1(1:x,1) = N(1:x,2);
 
-%fill matrices
+% fill matrices
 for r = 1:q0
 
 	for s = 1:q0
@@ -103,7 +103,7 @@ for r = 1:q0
 
 end
 
-%compute matrices
+% compute matrices
 switch type
 
 	case 0
@@ -123,24 +123,26 @@ switch type
 
 end
 
-%plot
+% plot
 subplot(2,1,1);
 plot(z*q);
 subplot(2,1,2);
 plot(q*z);
 
-z = sum(m);
-a = sum(z);
+% common user count
+b = sum(m);
+a = sum(b);
 
+% statistics
 p = (a/w);
 l = (a/x);
 r = p/l;
-q = a/d;
+e = a/d;
 
 sprintf('%f common users',a)
 sprintf('ratio common users to userlist1 = %f',p)
 sprintf('ratio common users to userlist2 = %f',l)
 sprintf('ratio of two ratios = %f',r)
-sprintf('# of common users / diameter = %f',q)
+sprintf('# of common users / diameter = %f',e)
 
 end
