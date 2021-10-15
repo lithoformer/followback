@@ -1,4 +1,4 @@
-function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
+function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % social network user follow-back statistics
 
@@ -18,7 +18,7 @@ function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
 
 if nargin ~= 4
 
-	error('Please enter two user files, transform ordering type - 0 for hadamard, 1 for dyadic, default is sequency');
+	error('Please enter two user files, transform ordering type - 0 hadamard, 1 dyadic, default sequency, and web-diameter');
 
 end
 
