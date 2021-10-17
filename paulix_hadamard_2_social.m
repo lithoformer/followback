@@ -1,4 +1,4 @@
-function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
+function output = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % social network user follow-back statistics
 
@@ -18,7 +18,7 @@ function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % sample input:
 
-% [m,n,z,q] = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,19);
+% output = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,19);
 
 if nargin ~= 4
 
@@ -71,7 +71,7 @@ n = zeros(q0);
 % copy vectors
 M1 = cell(q0,1);
 N1 = cell(q0,1);
-output = cell(q0,1);
+output0 = cell(q0,1);
 M1(1:w,1) = M(1:w,2);
 N1(1:x,1) = N(1:x,2);
 
@@ -85,10 +85,6 @@ for r = 1:q0
         	m(r,s) = 1;
         	output(r) = M1(r);
 
-        else
-
-			m(r,s) = 0;
-
 		end
         
         if strcmpi(N1(r),M1(s))
@@ -96,11 +92,19 @@ for r = 1:q0
             n(r,s) = 1;
             output(s) = N1(s);
 
-        else
-
-			n(r,s) = 0;
-
         end
+
+	end
+
+end
+
+%find common users
+sum_m = sum(m,2);
+for i = 1:q0
+
+	if (sum_m(i) == 1)
+
+		output0(i) = M1(i);
 
 	end
 
@@ -132,9 +136,12 @@ plot(z*q);
 subplot(2,1,2);
 plot(q*z);
 
+% output
+output = output0(~cellfun('isempty',output0));
+writecell(output);
+
 % common user count
-b = sum(m);
-a = sum(b);
+a = size(output,1);
 
 % statistics
 p = (a/w);
@@ -148,9 +155,5 @@ sprintf('ratio common users to userlist1 = %f',p)
 sprintf('ratio common users to userlist2 = %f',l)
 sprintf('ratio of two ratios = %f',r)
 sprintf('# of common users / diameter = %f',e)
-
-% output
-output0 = output(~cellfun('isempty',output));
-writecell(output0);
 
 end
