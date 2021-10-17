@@ -90,7 +90,6 @@ for r = 1:q0
         if strcmpi(N1(r),M1(s))
 
             n(r,s) = 1;
-            output(s) = N1(s);
 
         end
 
