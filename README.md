@@ -1,5 +1,4 @@
-# followback
-function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
+function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % social network user follow-back statistics
 
@@ -7,7 +6,7 @@ function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
 
 % input two follow lists (or following/followers for same user) to find common users between follow lists
 
-% input web-diameter variable to obtain a coarse measure of user relationship to the web
+% input web-diameter variable to obtain a coarse measure of user relationship to web
 
 % diameter = 0.35 + 2.06 * log(N)
 
@@ -16,3 +15,7 @@ function [m,n,z,q] = paulix_hadamard_2_social(user1,user2,type,diameter)
 % https://barabasi.com/f/65.pdf
 
 % https://www.worldwidewebsize.com
+
+% sample input:
+
+% [m,n,z,q] = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,19);
