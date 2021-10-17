@@ -72,8 +72,8 @@ n = zeros(q0);
 M1 = cell(q0,1);
 N1 = cell(q0,1);
 output0 = cell(q0,1);
-M1(1:w,1) = M(1:w,2);
-N1(1:x,1) = N(1:x,2);
+M1(1:w,1) = M(1:w,1);
+N1(1:x,1) = N(1:x,1);
 
 % fill matrices
 for r = 1:q0
