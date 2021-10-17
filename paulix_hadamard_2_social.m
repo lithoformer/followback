@@ -71,6 +71,7 @@ n = zeros(q0);
 % copy vectors
 M1 = cell(q0,1);
 N1 = cell(q0,1);
+output = cell(q0,1);
 M1(1:w,1) = M(1:w,2);
 N1(1:x,1) = N(1:x,2);
 
@@ -82,6 +83,7 @@ for r = 1:q0
         if strcmpi(M1(r),N1(s))
                 
         	m(r,s) = 1;
+        	output(r) = M1(r);
 
         else
 
@@ -92,6 +94,7 @@ for r = 1:q0
         if strcmpi(N1(r),M1(s))
 
             n(r,s) = 1;
+            output(s) = N1(s);
 
         else
 
@@ -139,10 +142,15 @@ l = (a/x);
 r = p/l;
 e = a/d;
 
+% print stats
 sprintf('%f common users',a)
 sprintf('ratio common users to userlist1 = %f',p)
 sprintf('ratio common users to userlist2 = %f',l)
 sprintf('ratio of two ratios = %f',r)
 sprintf('# of common users / diameter = %f',e)
+
+% output
+output0 = output(~cellfun('isempty',output));
+writecell(output0);
 
 end
