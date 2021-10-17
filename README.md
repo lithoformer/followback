@@ -1,4 +1,4 @@
-function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
+function output = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % social network user follow-back statistics
 
@@ -18,4 +18,4 @@ function [m,n,z,q] = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % sample input:
 
-% [m,n,z,q] = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,19);
+% output = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,19);
