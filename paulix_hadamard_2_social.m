@@ -138,7 +138,6 @@ plot(q*z);
 
 % output
 output = output0(~cellfun('isempty',output0));
-writecell(output);
 
 % common user count
 a = size(output,1);
