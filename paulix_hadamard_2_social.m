@@ -8,9 +8,7 @@ function output = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % input web-diameter variable to obtain a coarse measure of user relationship to web
 
-% diameter = 0.35 + 2.06 * log(N)
-
-% where N = # of webpages
+% where diameter = #B of webpages
 
 % https://barabasi.com/f/65.pdf
 
@@ -18,7 +16,7 @@ function output = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % sample input:
 
-% output = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,50);
+% output = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,42);
 
 if nargin ~= 4
 
@@ -49,7 +47,7 @@ else
 end
 
 % set diameter of web
-d = diameter;
+d = 0.35 + 2.06 * log(diameter)
 
 % find transform size
 for h = 1:length(p_two)
