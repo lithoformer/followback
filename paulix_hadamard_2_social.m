@@ -47,7 +47,7 @@ else
 end
 
 % set diameter of web
-d = 0.35 + 2.06 * log(diameter)
+d = 0.35 + (2.06 * log(diameter));
 
 % find transform size
 for h = 1:length(p_two)
