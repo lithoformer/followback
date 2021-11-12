@@ -1,4 +1,4 @@
-function output = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
+function output = paulix_hadamard_2_social(userlist1,userlist2,type,webpages)
 
 % social network user follow-back statistics
 
@@ -8,7 +8,7 @@ function output = paulix_hadamard_2_social(userlist1,userlist2,type,diameter)
 
 % input web-diameter variable to obtain a coarse measure of user relationship to web
 
-% where diameter = #B of webpages
+% where webpages = #B of webpages
 
 % https://barabasi.com/f/65.pdf
 
@@ -47,7 +47,8 @@ else
 end
 
 % set diameter of web
-d = 0.35 + (2.06 * log(diameter));
+webpages = webpages * 1000000000;
+d = 0.35 + (2.06 * log(webpages));
 
 % find transform size
 for h = 1:length(p_two)
