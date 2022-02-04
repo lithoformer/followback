@@ -48,7 +48,7 @@ end
 
 % set diameter of web
 webpages = webpages * 1000000000;
-d = 0.35 + (2.06 * log(webpages));
+d = 0.35 + (2.06 * log10(webpages));
 
 % find transform size
 for h = 1:length(p_two)
