@@ -1,4 +1,4 @@
-function output = paulix_hadamard_2_social(userlist1,userlist2,type,webpages)
+function output = crosswavelet_hadamard_2_social(userlist1,userlist2,type,webpages)
 
 % social network user follow-back statistics
 
@@ -16,7 +16,7 @@ function output = paulix_hadamard_2_social(userlist1,userlist2,type,webpages)
 
 % sample input:
 
-% output = paulix_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,42);
+% output = crosswavelet_hadamard_2_social('kevin_following.csv','kevin_followers.csv',0,42);
 
 if nargin ~= 4
 
